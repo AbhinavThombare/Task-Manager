@@ -1,0 +1,38 @@
+#layout{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: rgb(255, 247, 196);
+}
+
+#frame{
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#formHead{
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(104, 253, 245);
+}
+#formHead p {
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+#card{
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+#msg{
+    padding-top: 5px;
+    padding-left: 5px;
+    color: red;
+}
+
+#sbtn{
+    text-align: center;
+    padding: 10px;
+}

@@ -1,0 +1,103 @@
+#frame {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: #e6e6ff;
+}
+
+#addprogresslayout{
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+
+}
+
+#addprogresscard{
+   padding: 20px;
+   background-color: #ffe0b3;
+}
+
+#addprogresskhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #ff9900 ;
+}
+
+#addprogresskhead p {
+    margin-bottom: 0;
+}
+
+label{
+    font-size: 15px;
+}
+
+#submitbtn{
+    padding-top: 10px;
+}
+
+
+#tablelayout{
+    width: 65%;
+    height: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+#tablekhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #ff6666;
+}
+
+#tablekhead p{
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    // text-align: center;
+  }
+  td, th {
+  
+    border: 1px solid black;
+  }
+
+#tablecard{
+    margin: 30px;
+    height: 400px; 
+    overflow: auto;
+}
+
+.thead-light{
+    position: sticky;
+    top: 0;
+    background-color:#ff9999;
+    color: black;
+}
+
+.tbody-light{
+    background-color: #ffcccc;
+}
+
+.tbody-light tr:hover{
+    background-color: lightgreen;
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.8;
+    z-index: 99;
+}
+
+.spinner{
+    top: 50%;
+    left: 50%;
+}

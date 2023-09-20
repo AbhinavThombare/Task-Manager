@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+<div id="data">
+    <div id="heading">
+        <p><strong>Task Manager</strong></p>
+    </div>
+    <div id="layout">
+        <div id="frame">
+            <div id="fhead">
+                <p>Login</p>
+            </div>
+            <div id="card">
+                <form [formGroup]="loginform" (ngSubmit)="onSubmit()" novalidate>
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <!-- <input type="email" class="form-control" name="email" id="email"
+                            placeholder="Enter Email"> -->
+                        <input type="text" name="email" id="email" class="form-control" formControlName="email"
+                            placeholder="Enter Email">
+                    </div>
+                    <div class="error">
+                        <ng-container *ngFor="let msg of message_error.email">
+                            <div class="error"
+                                *ngIf="loginform.get('email').hasError(msg.type) && (loginform.get('email').dirty || loginform.get('email').touched)">
+                                <p id="msg">{{msg.message}}</p>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="exampleFormControlInput1" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password"
+                            formControlName="password" placeholder="Enter Password">
+                    </div>
+                    <div class="error">
+                        <ng-container *ngFor="let msg of message_error.password">
+                            <div class="error"
+                                *ngIf="loginform.get('password').hasError(msg.type) && (loginform.get('password').dirty || loginform.get('password').touched)">
+                                <p id="msg">{{msg.message}}</p>
+                            </div>
+                        </ng-container>
+                    </div>
+
+
+
+                    <div id="lbtn">
+                        <button type="submit" class="btn btn-success">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div id="help">
+                <a id="regi" routerLink="../registration">New User?</a>
+                <a id="frpass" routerLink="../forgotpassword">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

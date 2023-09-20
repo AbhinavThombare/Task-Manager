@@ -1,0 +1,38 @@
+<div>
+    <div>
+        <nav class="navbar navbar-expand-lg">
+            <a id="navbrand" class="navbar-brand" routerLink="../user/home"><strong>User</strong></a>
+            <button id="togglerbtn" class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div id="navitems">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link active" routerLink="../user/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" routerLink="task">Create Task</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="spacer">
+
+                </div>
+                <div id="displayName">
+                    <h2> Welcome {{this.user}}</h2>
+                </div>
+                <div id="logoutbtn">
+                    <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+
+                </div>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<!-- <app-globalloader></app-globalloader> -->
+
+<router-outlet></router-outlet>

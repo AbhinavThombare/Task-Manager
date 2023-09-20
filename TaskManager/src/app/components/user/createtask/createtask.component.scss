@@ -1,0 +1,201 @@
+#frame{
+    display: flex;
+    height: 100%;
+    background-color: #ffe6e6;
+}
+.input-row {
+    display: flex;
+    align-items: center;
+}
+#frame1 form{
+    margin: 10px;
+    width: 300px;
+ }
+#add{
+    color: black;
+}
+#remove{
+    color: red;
+}
+
+//add card
+#tasklayout{
+    width: 45%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+
+}
+
+#taskcard{
+    // width: 40%;
+   padding: 20px;
+   background-color: #ffccff;
+}
+
+#taskhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #ff4dff ;
+}
+
+#taskhead p {
+    margin-bottom: 0;
+}
+
+label{
+    font-size: 15px;
+}
+
+#submitbtn{
+    padding-top: 10px;
+}
+
+//update
+
+#updatetasklayout{
+    width: 45%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+
+}
+
+#updatetaskcard{
+    // width: 40%;
+   padding: 20px;
+   background-color: cornflowerblue;
+}
+
+#updatetaskhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #F7DC6F ;
+}
+
+#updatetaskhead p {
+    margin-bottom: 0;
+}
+
+label{
+    font-size: 15px;
+}
+
+#submitbtn{
+    padding-top: 10px;
+}
+#cancelbtn{
+    margin-left: 10px;
+}
+
+//old subtask
+#updatesubtasklayout{
+    width: 45%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+
+}
+
+#updatesubtaskcard{
+    // width: 40%;
+   padding: 20px;
+   background-color: #ccffff;
+}
+
+#updatesubtaskhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #00ffff ;
+}
+
+#updatesubtaskhead p {
+    margin-bottom: 0;
+}
+
+label{
+    font-size: 15px;
+}
+
+#submitbtn{
+    padding-top: 10px;
+}
+#cancelbtn{
+    margin-left: 10px;
+}
+
+// table
+#tablelayout{
+    width: 55%;
+    height: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+#tablekhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #e6e600;
+}
+
+#tablekhead p{
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    // text-align: center;
+  }
+  td, th {
+  
+    border: 1px solid black;
+  }
+
+#tablecard{
+    margin: 30px;
+    height: 400px; 
+    overflow: auto;
+}
+
+.thead-light{
+    position: sticky;
+    top: 0;
+    background-color:#9999ff;
+    color: black;
+}
+
+.tbody-light{
+    background-color: #ccccff;
+}
+
+.tbody-light tr:hover{
+    background-color: lightgreen;
+}
+
+#editbtn{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+#deletebtn{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#addsubtask{
+    display: flex;
+}
+#editSubTaskbtn{
+    background-color: #ff9966;
+}
+#addSubTaskbtn{
+    background-color: #ace600;
+}
+

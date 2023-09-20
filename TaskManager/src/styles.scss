@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.successbar {
+    background: green;
+    color: white;
+  }
+.successbar button {
+    background-color: red;
+    color: white;
+}
+
+.errorbar {
+    background-color: red;
+    color: white;
+}
+.errorbar button{
+    background-color: white;
+    color: black;
+}

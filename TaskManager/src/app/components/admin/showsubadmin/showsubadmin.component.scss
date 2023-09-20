@@ -1,0 +1,157 @@
+#frame {
+    background-color: azure;
+    height: 100%;
+    display: flex;
+}
+
+////////////////////////////////////////
+#formlayout {
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+}
+
+#formcard {
+    // width: 50%;
+    padding: 20px;
+    background-color: #ffeee6;
+}
+
+#formhead {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #ff884d;
+}
+
+#formhead p {
+    margin-bottom: 0;
+}
+
+label {
+    font-size: 15px;
+}
+
+#submitbtn {
+    padding-top: 10px;
+}
+
+#msg {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: red;
+}
+///////////////////////////////////////
+#updateformlayout {
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+}
+
+#updateformcard {
+    // width: 50%;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+#updateformhead {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #F7DC6F;
+}
+
+#updateformhead p {
+    margin-bottom: 0;
+}
+
+label {
+    font-size: 15px;
+}
+
+#submitbtn {
+    padding-top: 10px;
+}
+
+#msg {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: red;
+}
+
+#submitbtn{
+    padding-top: 10px;
+}
+#cancelbtn{
+    margin-left: 10px;
+}
+
+
+////////////////////////////////////////
+#tablelayout {
+    width: 65%;
+    height: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+#tablekhead {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #00FFA2;
+}
+
+#tablekhead p {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    // text-align: center;
+}
+
+td,
+th {
+
+    border: 1px solid black;
+}
+
+#tablecard {
+    margin: 30px;
+    height: 400px; 
+    overflow: auto;
+    // background-color: antiquewhite;
+}
+
+
+.thead-light {
+    position: sticky;
+    top: 0;
+    background-color: #00b3b3;
+    color: black;
+}
+
+.tbody-light{
+    background-color: #b3ffff;
+}
+
+.tbody-light tr:hover{
+    background-color:  #ccffcc
+    ;
+}
+
+#editbtn {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#deletebtn {
+    margin-top: 5px;
+    margin-right: 5px;
+}

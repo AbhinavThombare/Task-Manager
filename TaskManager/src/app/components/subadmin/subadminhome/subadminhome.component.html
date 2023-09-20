@@ -1,0 +1,122 @@
+<div id="inputData">
+    <div id="totalUser">
+        <div id="data">
+            <label for="">Total User</label>
+        </div>
+        <p>{{totalUser}}</p>
+    </div>
+
+    <div id="totalTask">
+        <div id="data">
+            <label for="">Total Task</label>
+        </div>
+        <p>{{totalTask}}</p>
+    </div>
+
+    <div id="taskComplete">
+        <div id="data">
+            <label for="">Task Completed</label>
+        </div>
+        <p>{{taskcom}}</p>
+    </div>
+</div>
+<div id="frame">
+    <div id="tasklayout" *ngIf="createopen">
+        <div id="taskhead">
+            <p>Create Task</p>
+        </div>
+        <div id="taskcard">
+
+            <form class="form">
+                <div>
+                    <label>Task Name</label>
+                    <input type="text" class="form-control" name="taskname" id="taskname" #taskname
+                        placeholder="Enter Task" [(ngModel)]="itask">
+                </div>
+                <div class="mt-3">
+                    <label>Progress</label>
+                    <input type="text" class="form-control" name="progress" id="progress" #progress
+                        placeholder="Enter Progress" [(ngModel)]="iprogress" minlength="1" maxlength="3">
+                </div>
+                <div class="mt-3">
+                    <label>Assign To</label>
+                    <select name="assignuser" id="assignuser" #assignuser value="uassign" class="form-select"
+                        aria-label="Default select example" [(ngModel)]="iassign">
+                        <option *ngFor="let item of getUserData" [value]="item.name">
+                            <p *ngIf="item.role==='user'">{{item.name}}</p>
+                        </option>
+                    </select>
+                </div>
+                <div id="submitbtn">
+                    <button type="submit" class="btn btn-success"
+                        (click)="addTask(taskname.value,assignuser.value,progress.value)">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="updatetasklayout" *ngIf="updateopen">
+        <div id="updatetaskhead">
+            <p>Update Task</p>
+        </div>
+        <div id="updatetaskcard">
+            <form class="form">
+                <div>
+                    <label>Task Name</label>
+                    <input type="text" class="form-control" name="taskname" id="taskname" #taskname
+                        placeholder="Enter Task" [(ngModel)]="utask">
+                </div>
+                <div class="mt-3">
+                    <label>Progress</label>
+                    <input type="text" class="form-control" name="progress" id="progress" #progress
+                        placeholder="Enter Progress" [(ngModel)]="uprogress">
+                </div>
+                <div class="mt-3">
+                    <label>Assign To</label>
+                    <select name="assignuser" id="assignuser" #assignuser value="uassign" class="form-select"
+                        aria-label="Default select example" [(ngModel)]="uassign">
+                        <option *ngFor="let item of getUserData" [value]="item.name">
+                            <p *ngIf="item.role==='user'">{{item.name}}</p>
+                        </option>
+                    </select>
+                </div>
+                <div id="submitbtn">
+                    <button type="submit" class="btn btn-success"
+                        (click)="updateTask(taskname.value,assignuser.value,progress.value)">Update</button>
+                    <button id="cancelbtn" type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="tablelayout">
+        <div id="tablekhead">
+            <p>Task Details</p>
+        </div>
+        <div id="tablecard">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Task Name</th>
+                        <th>Assign User</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-light">
+                    <tr *ngFor="let item of getTaskData; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>
+                            {{item.task}}
+                            <ul *ngFor="let sub of item.subTask">
+                                <li>{{sub}}</li>
+                            </ul>
+                        </td>
+                        <td>{{item.assign}}</td>
+                        <td>{{item.progress+"%"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

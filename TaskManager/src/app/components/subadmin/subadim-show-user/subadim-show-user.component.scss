@@ -1,0 +1,69 @@
+#frame {
+    background-color: azure;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+////////////////////////////////////////
+#tablelayout {
+    width: 65%;
+    height: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+#tablekhead {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #4ce600;
+}
+
+#tablekhead p {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    // text-align: center;
+}
+
+td,
+th {
+
+    border: 1px solid black;
+}
+
+#tablecard {
+    margin: 30px;
+    height: 400px; 
+    overflow: auto;
+}
+
+
+.thead-light {
+    position: sticky;
+    top: 0;
+    background-color: #66ff1a;
+}
+
+.tbody-light{
+    background-color: #ddffcc;
+}
+
+.tbody-light tr:hover{
+    background-color: lightblue;
+}
+
+#editbtn {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#deletebtn {
+    margin-top: 5px;
+    margin-right: 5px;
+}

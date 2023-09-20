@@ -1,0 +1,164 @@
+
+
+#frame{
+    display: flex;
+}
+
+#inputData{
+    padding-top: 10px;
+    // background-color: azure;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+#totalUser{
+    width: 20%;
+    margin-right: 30px;
+    margin-left: 30px;
+    border: 1px;
+    border-radius: 25px;
+}
+#data{
+    padding: 3px;
+    background-color: black;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#data label{
+    font-size: 25px;
+}
+
+#totalUser p{
+    padding: 3px;
+    font-size: 25px;
+    background-color: rgb(140, 255, 0);
+    color: black;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#totalTask{
+    width: 20%;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#totalTask p{
+    padding: 3px;
+    font-size: 25px;
+    background-color: rgb(140, 255, 0);
+    color: black;
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+#taskComplete{
+    width: 20%;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#taskComplete p{
+    padding: 3px;
+    font-size: 25px;
+    background-color: rgb(140, 255, 0);
+    color: black;
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+//add card
+#tasklayout{
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+
+}
+
+#taskcard{
+    // width: 40%;
+   padding: 20px;
+   background-color: #ffe0b3;
+}
+
+#taskhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #ff9900 ;
+}
+
+#taskhead p {
+    margin-bottom: 0;
+}
+
+label{
+    font-size: 15px;
+}
+
+#submitbtn{
+    padding-top: 10px;
+}
+
+// table
+#tablelayout{
+    width: 65%;
+    height: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+#tablekhead{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #ff00ff;
+}
+
+#tablekhead p{
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    // text-align: center;
+  }
+  td, th {
+  
+    border: 1px solid black;
+  }
+
+#tablecard{
+    margin: 30px;
+    height: 400px; 
+    overflow: auto;
+}
+
+.thead-light{
+    position: sticky;
+    top: 0;
+    background-color:#ff00ff;
+    color: white;
+}
+
+.tbody-light{
+    background-color: #ffccff;
+}
+
+.tbody-light tr:hover{
+    background-color: lightgreen;
+}
+
+#editbtn{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+#deletebtn{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+

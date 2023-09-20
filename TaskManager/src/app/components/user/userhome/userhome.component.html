@@ -1,0 +1,74 @@
+<!-- <div class="overlay">
+    <mat-progress-spinner class="spinner" mode="indeterminate">
+    </mat-progress-spinner>
+</div> -->
+<div id="frame">
+
+    <div id="addprogresslayout" *ngIf="open">
+        <div id="addprogresskhead">
+            <p>Add Progress</p>
+        </div>
+        <div id="addprogresscard">
+
+            <form class="form" name="myForm">
+                <div>
+                    <label>Task Name</label>
+                    <input type="text" class="form-control" name="taskname" id="taskname" #taskname
+                        placeholder="Enter Task" disabled [(ngModel)]="utask">
+                </div>
+                <div class="mt-3">
+                    <label>Progress</label>
+                    <input type="text" class="form-control" name="progress" id="progress" #progress
+                        placeholder="Enter Progress" [(ngModel)]="uprogress" minlength="1" maxlength="3">
+                </div>
+                <!-- <div>
+                    <div ngif="progress.errors?.['minlength']">
+                        <p>Please Enter Valid Number</p>
+                    </div>
+                </div> -->
+                <div id="submitbtn">
+                    <button type="submit" class="btn btn-success"
+                        (click)="addProgress(taskname.value,progress.value)">Submit</button>
+                    <button type="button" class="btn btn-danger m-3" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="tablelayout">
+        <div id="tablekhead">
+            <p>Task Assign Details</p>
+        </div>
+        <div id="tablecard">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Task Name</th>
+                        <th>Progress</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-light">
+                    <tr *ngFor="let item of taskData; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>
+                            {{item.task}}
+                            <ul *ngFor="let sub of item.subTask">
+                                <li>{{sub}}</li>
+                            </ul>
+                        </td>
+                        <td>{{item.progress+"%"}}</td>
+                        <td>
+                            <button type="button" class="btn btn-info mt-2" (click)="editProgress(item.task)">Add
+                                Progress</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+
+</div>

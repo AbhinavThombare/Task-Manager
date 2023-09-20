@@ -1,0 +1,232 @@
+#btndiv{
+   
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+}
+#btndiv #adduser{
+    font-size: 20px;
+}
+#frame {
+    // background-color: azure;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+hr{
+    height: 5px;
+    background: black;
+}
+
+#frame2 {
+    padding-top: 20px;
+    // background-color: azure;
+    height: auto;
+    display: flex;
+}
+
+////////////////////////////////////////
+#formlayout {
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+}
+
+#formcard {
+    // width: 50%;
+    padding: 20px;
+    background-color: #fef9e7;
+}
+
+#formhead {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #f5d556;
+}
+
+#formhead p {
+    margin-bottom: 0;
+}
+
+label {
+    font-size: 15px;
+}
+
+#submitbtn {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#msg {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: red;
+}
+///////////////////////////////////////
+#updateformlayout {
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: auto;
+}
+
+#updateformcard {
+    // width: 50%;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+#updateformhead {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #F7DC6F;
+}
+
+#updateformhead p {
+    margin-bottom: 0;
+}
+
+label {
+    font-size: 15px;
+}
+
+#submitbtn {
+    padding-top: 10px;
+}
+
+#msg {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: red;
+}
+
+#submitbtn{
+    padding-top: 10px;
+}
+#cancelbtn{
+    margin-left: 10px;
+}
+
+////////////////////////////////////////
+#tablelayout1 {
+    width: 50%;
+    height: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#tablekhead1 {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #F1948A;
+}
+
+#tablekhead1 p {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    // text-align: center;
+}
+
+td,
+th {
+
+    border: 1px solid black;
+}
+
+#tablecard1 {
+    margin: 10px;
+    height: 400px; 
+    overflow: auto;
+    // background-color: antiquewhite;
+}
+
+#tablecard1 .tbody-light{
+    background-color: antiquewhite;
+}
+
+
+#tablecard1 .thead-light {
+    position: sticky;
+    top: 0;
+    background-color: #F1948A;
+}
+
+#tablecard1 .tbody-light tr:hover{
+    background-color: #ccccff;
+}
+
+#editbtn {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#deletebtn {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+///////////////////////////////////////
+#tablelayout2 {
+    width: 50%;
+    height: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#tablekhead2 {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    background-color: #00FFA2;
+}
+
+#tablekhead2 p {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    // text-align: center;
+}
+
+td,
+th {
+
+    border: 1px solid black;
+}
+
+#tablecard2 {
+    margin: 10px;
+    height: 400px; 
+    overflow: auto;
+}
+
+
+#tablecard2 .thead-light {
+    position: sticky;
+    top: 0;
+    background-color: #00b3b3;
+    color: black;
+}
+
+#tablecard2 .tbody-light{
+    background-color: #b3ffff;
+}
+
+#tablecard2 .tbody-light tr:hover{
+    background-color:  #ccffcc
+    ;
+}
+

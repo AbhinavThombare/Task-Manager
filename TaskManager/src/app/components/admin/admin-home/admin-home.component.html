@@ -1,0 +1,303 @@
+<div id="inputData">
+    <div id="totalUser">
+        <div id="data">
+            <label for="">Total Sub-Admin</label>
+        </div>
+        <p>{{totalsubadmin}}</p>
+    </div>
+
+    <div id="totalUser">
+        <div id="data">
+            <label for="">Total User</label>
+        </div>
+        <p>{{totalUser}}</p>
+    </div>
+
+    <div id="totalTask">
+        <div id="data">
+            <label for="">Total Task</label>
+        </div>
+        <p>{{totalTask}}</p>
+    </div>
+
+    <div id="taskComplete">
+        <div id="data">
+            <label for="">Task Completed</label>
+        </div>
+        <p>{{taskcom}}</p>
+    </div>
+</div>
+
+<div id="frame">
+    <div id="tasklayout" *ngIf="createopen">
+        <div id="taskhead">
+            <p>Create Task</p>
+        </div>
+        <div id="taskcard">
+
+            <form class="form">
+                <div>
+                    <label>Task Name</label>
+                    <input type="text" class="form-control" name="taskname" id="taskname" #taskname
+                        placeholder="Enter Task" [(ngModel)]="itask">
+                </div>
+                <div class="mt-3">
+                    <label>Progress</label>
+                    <input type="text" class="form-control" name="progress" id="progress" #progress
+                        placeholder="Enter Progress" [(ngModel)]="iprogress" minlength="1" maxlength="3">
+                </div>
+                <div class="mt-3">
+                    <label>Assign To</label>
+                    <select name="assignuser" id="assignuser" #assignuser value="uassign" class="form-select"
+                        aria-label="Default select example" [(ngModel)]="iassign">
+                        <option *ngFor="let item of getUserData" [value]="item.name">
+                            <p *ngIf="item.role==='user'">{{item.name}}</p>
+                        </option>
+                    </select>
+                </div>
+                <div id="submitbtn">
+                    <button type="submit" class="btn btn-success"
+                        (click)="addData(taskname.value,assignuser.value,progress.value)">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="updatetasklayout" *ngIf="updateopen">
+        <div id="updatetaskhead">
+            <p>Update Task</p>
+        </div>
+        <div id="updatetaskcard">
+            <form class="form">
+                <div>
+                    <label>Task Name</label>
+                    <input type="text" class="form-control" name="taskname" id="taskname" #taskname
+                        placeholder="Enter Task" [(ngModel)]="utask">
+                </div>
+                <div class="mt-3">
+                    <label>Progress</label>
+                    <input type="text" class="form-control" name="progress" id="progress" #progress
+                        placeholder="Enter Progress" [(ngModel)]="uprogress">
+                </div>
+                <div class="mt-3">
+                    <label>Assign To</label>
+                    <select name="assignuser" id="assignuser" #assignuser value="uassign" class="form-select"
+                        aria-label="Default select example" [(ngModel)]="uassign">
+                        <option *ngFor="let item of getUserData" [value]="item.name">
+                            <p *ngIf="item.role==='user'">{{item.name}}</p>
+                        </option>
+                    </select>
+                </div>
+                <div id="submitbtn">
+                    <button type="submit" class="btn btn-success"
+                        (click)="updateTask(taskname.value,assignuser.value,progress.value)">Update</button>
+                    <button id="cancelbtn" type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="updatetasklayout" *ngIf="subopen">
+        <div id="updatetaskhead">
+            <p>Add Sub-Task</p>
+        </div>
+        <div id="updatetaskcard">
+            <form class="form">
+                <div>
+                    <label>Task Name</label>
+                    <input type="text" class="form-control" name="taskname" id="taskname" #taskname
+                        placeholder="Enter Task" disabled [(ngModel)]="utask">
+                </div>
+                <div id="frame1">
+                    <div *ngFor="let hobby of subtaskArray.controls;last as isLast; index as idx;" class="input-row">
+                        <form>
+                            <div>
+                                <input name="subtask" id="subtask" type="text" class="form-control" placeholder="Enter Sub-Task" [formControl]="hobby">
+                            </div>
+                        </form>
+                       <div id="remove">
+                        <button  mat-icon-button *ngIf="subtaskArray.length > 1" (click)="removeInputControl(idx) ">
+                            <mat-icon>remove_circle</mat-icon>
+                        </button>
+                       </div>
+                       <div id="add">
+                        <button  mat-icon-button *ngIf="isLast" (click)="addInputControl()">
+                            <mat-icon>add_circle_outline</mat-icon>
+                        </button>
+                       </div>
+                    </div>
+                </div>
+
+                <div id="submitbtn">
+                    <button type="submit" class="btn btn-success"
+                        (click)="addSubTask(taskname.value)">Add Sub-Task</button>
+                    <button id="cancelbtn" type="submit" class="btn btn-danger" (click)="canceloldtask()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="updatesubtasklayout" *ngIf="oldsubopen">
+        <div id="updatesubtaskhead">
+            <p>Update Sub-Task</p>
+        </div>
+        <div id="updatesubtaskcard">
+            <form class="form">
+                <div>
+                    <label>Task Name</label>
+                    <input type="text" class="form-control" name="taskname" id="taskname" #taskname
+                        placeholder="Enter Task" disabled [(ngModel)]="utask">
+                </div>
+                <div id="frame1">
+                    <div *ngFor="let hobby of oldsubtaskArray.controls;last as isLast; index as idx;" class="input-row">
+                        <form>
+                            <div id="subdata">
+                                <input name="subtask" id="subtask" type="text" class="form-control"
+                                    placeholder="Enter Sub-Task" [formControl]="hobby">
+                            </div>
+                        </form>
+                        <div id="remove">
+                            <button mat-icon-button *ngIf="oldsubtaskArray.length > 1"
+                                (click)="oldremoveInputControl(idx) ">
+                                <mat-icon>remove_circle</mat-icon>
+                            </button>
+                        </div>
+                        <div id="add">
+                            <button mat-icon-button *ngIf="isLast" (click)="oldaddInputControl()">
+                                <mat-icon>add_circle_outline</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="submitbtn">
+                    <button type="submit" class="btn btn-success" (click)="addUpdatedSubTask(taskname.value)">Update
+                        Sub-Task</button>
+                    <button id="cancelbtn" type="submit" class="btn btn-danger"
+                        (click)="canceloldtask()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="tablelayout">
+        <div id="tablekhead">
+            <p>Task Details</p>
+        </div>
+        <div id="searchdiv">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Task" [(ngModel)]="nameSearch">
+        </div>
+        <div id="tablecard">
+            
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Task Name</th>
+                        <th>Assign User</th>
+                        <th>Progress</th>
+                        <th>SubTask Action</th>
+                        <th>Task Action</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-light"  *ngFor="let item of taskData  | filtertask:nameSearch ; let i=index">
+                    <tr *ngIf="(item.progress >= 90)" style="background-color:#00ff00 ;">
+                        <td>{{i+1}}</td>
+                        <td>
+                            {{item.task}}
+                            <ul *ngFor="let sub of item.subTask">
+                                <li>{{sub}}</li>
+                            </ul>
+                        </td>
+                        <td>{{item.assign}}</td>
+                        <td>{{item.progress+"%"}}</td>
+                        <td>
+                            <button id="addSubTaskbtn" type="button" class="btn btn-primary"
+                                (click)="openTask(item.assign,item.task)">Add</button>
+                            <button *ngIf="item.subTask" id="editbtn" type="button" class="btn btn-info"
+                                (click)="editsubTask(item.task,item.subTask,item.assign)">Edit</button>
+                        </td>
+                        <td>
+                            <button id="editbtn" type="button" class="btn btn-info"
+                                (click)="editTask(i)">Edit</button>
+                            <button id="deletebtn" type="button" class="btn btn-danger"
+                                (click)="delTask(i)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="(item.progress >= 50 && item.progress < 89)" style="background-color: #66ff66 ;">
+                        <td>{{i+1}}</td>
+                        <td>
+                            {{item.task}}
+                            <ul *ngFor="let sub of item.subTask">
+                                <li>{{sub}}</li>
+                            </ul>
+                        </td>
+                        <td>{{item.assign}}</td>
+                        <td>{{item.progress+"%"}}</td>
+                        <td>
+                            <button id="addSubTaskbtn" type="button" class="btn btn-primary"
+                                (click)="openTask(item.assign,item.task)">Add</button>
+                            <button *ngIf="item.subTask" id="editbtn" type="button" class="btn btn-info"
+                                (click)="editsubTask(item.task,item.subTask,item.assign)">Edit</button>
+                        </td>
+                        <td>
+                            <button id="editbtn" type="button" class="btn btn-info"
+                                (click)="editTask(i)">Edit</button>
+                            <button id="deletebtn" type="button" class="btn btn-danger"
+                                (click)="delTask(i)">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr *ngIf="(item.progress >= 30 && item.progress < 49)" style="background-color:#99ff99 ;">
+                        <td>{{i+1}}</td>
+                        <td>
+                            {{item.task}}
+                            <ul *ngFor="let sub of item.subTask">
+                                <li>{{sub}}</li>
+                            </ul>
+                        </td>
+                        <td>{{item.assign}}</td>
+                        <td>{{item.progress+"%"}}</td>
+                        <td>
+                            <button id="addSubTaskbtn" type="button" class="btn btn-primary"
+                                (click)="openTask(item.assign,item.task)">Add</button>
+                            <button *ngIf="item.subTask" id="editbtn" type="button" class="btn btn-info"
+                                (click)="editsubTask(item.task,item.subTask,item.assign)">Edit</button>
+                        </td>
+                        <td>
+                            <button id="editbtn" type="button" class="btn btn-info"
+                                (click)="editTask(i)">Edit</button>
+                            <button id="deletebtn" type="button" class="btn btn-danger"
+                                (click)="delTask(i)">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr *ngIf="( item.progress <29)" style="background-color:#ccffcc ;">
+                        <td>{{i+1}}</td>
+                        <td>
+                            {{item.task}}
+                            <ul *ngFor="let sub of item.subTask">
+                                <li>{{sub}}</li>
+                            </ul>
+                        </td>
+                        <td>{{item.assign}}</td>
+                        <td>{{item.progress+"%"}}</td>
+                        <td>
+                            <button id="addSubTaskbtn" type="button" class="btn btn-primary"
+                                (click)="openTask(item.assign,item.task)">Add</button>
+                            <button *ngIf="item.subTask" id="editbtn" type="button" class="btn btn-info"
+                                (click)="editsubTask(item.task,item.subTask,item.assign)">Edit</button>
+                        </td>
+                        <td>
+                            <button id="editbtn" type="button" class="btn btn-info"
+                                (click)="editTask(i)">Edit</button>
+                            <button id="deletebtn" type="button" class="btn btn-danger"
+                                (click)="delTask(i)">Delete</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

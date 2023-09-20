@@ -1,0 +1,61 @@
+.navbar{
+    background-color:#3333ff;
+    color: whitesmoke;
+}
+
+#navbrand{
+    color: whitesmoke;
+    padding-left: 20px;
+}
+
+#togglerbtn{
+    margin-right:20px ;
+}
+
+#togglerbtn:hover{
+    background-color: aliceblue;
+}
+
+#navitems{
+    width: max-content;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    padding-left: 20px;
+}
+#navitems a{
+    color: whitesmoke;
+}
+
+#navitems a:hover{
+    border-radius: 5px;
+    background-color: aliceblue;
+    color: black;
+}
+
+#spacer{
+    flex: 1 1 auto;
+}
+
+#displayName h2{
+    margin-bottom: 0;
+}
+
+#logoutbtn{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.8;
+    z-index: 99;
+}
+
+.spinner{
+    top: 50%;
+    left: 50%;
+}

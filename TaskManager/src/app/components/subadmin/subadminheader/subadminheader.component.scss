@@ -1,0 +1,41 @@
+.navbar{
+    background-color:#DFFF00;
+}
+
+#navbrand{
+    padding-left: 20px;
+}
+
+#togglerbtn{
+    margin-right:20px ;
+}
+
+#togglerbtn:hover{
+    background-color: aliceblue;
+}
+
+#navitems{
+    width: max-content;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    padding-left: 20px;
+}
+
+#navitems a:hover{
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+#spacer{
+    flex: 1 1 auto;
+}
+
+#displayName h2{
+    margin-bottom: 0;
+}
+
+#logoutbtn{
+    padding-left: 20px;
+    padding-right: 20px;
+}
